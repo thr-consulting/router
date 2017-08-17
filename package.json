@@ -1,0 +1,92 @@
+{
+  "name": "@thx/router",
+  "version": "1.0.0",
+  "description": "React router enhancements",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.babel.js",
+    "demo": "react-scripts start",
+    "prepare": "npm run build",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "flow": "flow",
+    "lint": "eslint *.js lib",
+    "docs": "jsdoc -c jsdoc.json",
+    "docs:md": "jsdoc2md -c jsdoc.json -f src/lib/*.js > docs/README.md",
+    "docs:explain": "jsdoc -X -c jsdoc.json",
+    "validate": "npm ls"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thr-consulting/router.git"
+  },
+  "keywords": [
+    "react",
+    "router"
+  ],
+  "author": "Mike Kornelson <mike@durbn.net>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-flow": "^6.23.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "enzyme": "^2.9.1",
+    "enzyme-to-json": "^1.5.1",
+    "eslint": "^4.4.1",
+    "eslint-config-airbnb": "^15.0.2",
+    "eslint-plugin-babel": "^4.1.1",
+    "eslint-plugin-flowtype": "^2.34.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jest": "^20.0.3",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "flow-bin": "^0.52.0",
+    "ink-docstrap": "^1.3.0",
+    "jest": "^20.0.4",
+    "jsdoc": "^3.4.3",
+    "jsdoc-babel": "^0.3.0",
+    "jsdoc-to-markdown": "^3.0.0",
+    "precommit-hook-eslint": "^3.0.0",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-scripts": "1.0.10",
+    "react-test-renderer": "^15.6.1",
+    "semantic-ui-react": "^0.71.4",
+    "webpack": "^3.1.0",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "peerDependencies": {
+    "react": "^15.5.0",
+    "react-dom": "^15.6.0",
+    "semantic-ui-react": "^0.71.4",
+    "react-redux": "^5.0.0",
+    "redux": "3.7.0"
+  },
+  "dependencies": {
+    "@thx/auth": "^1.0.0",
+    "@thx/messages": "^1.0.0",
+    "@thx/tproptypes": "^1.0.0",
+    "debug": "^3.0.0",
+    "immutable": "^3.8.1",
+    "lodash": "^4.17.4",
+    "prop-types": "^15.5.10",
+    "react-router-dom": "^4.1.2",
+    "styled-components": "^2.1.2"
+  },
+  "pre-commit": [
+    "lint",
+    "flow",
+    "test",
+    "docs:md"
+  ]
+}
