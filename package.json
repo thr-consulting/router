@@ -75,8 +75,8 @@
     "react-dom": "^15.6.0",
     "react-redux": "^5.0.0",
     "react-router-dom": "^4.1.0",
-    "redux": "3.7.0",
-    "semantic-ui-react": "^0.71.4"
+    "redux": "^3.7.0",
+    "semantic-ui-react": "^0.71.3"
   },
   "dependencies": {
     "@thx/auth": "^1.0.0",
