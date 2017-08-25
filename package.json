@@ -1,6 +1,6 @@
 {
   "name": "@thx/router",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React router enhancements",
   "main": "dist/index.js",
   "scripts": {
