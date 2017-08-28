@@ -29,7 +29,7 @@ exports[`NotFound should render without throwing an error 1`] = `
       alt="Page Not Found"
       as="img"
       size="small"
-      src="towtruck.png"
+      src="test-file-stub"
       ui={true}
     />
   </GridColumn>

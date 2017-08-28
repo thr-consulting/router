@@ -29,7 +29,7 @@ exports[`Unauthorized should render without throwing an error 1`] = `
       alt="No Authorized"
       as="img"
       size="small"
-      src="police.png"
+      src="test-file-stub"
       ui={true}
     />
   </GridColumn>

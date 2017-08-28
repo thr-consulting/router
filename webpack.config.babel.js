@@ -38,6 +38,10 @@ module.exports = {
 					},
 				],
 			},
+			{
+				test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf)(\?[a-z0-9=.]+)?$/,
+				use: [{loader: 'url-loader', options: {limit: 10000}}],
+			},
 		],
 	},
 	plugins: [
