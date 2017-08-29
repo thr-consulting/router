@@ -1,6 +1,6 @@
 {
   "name": "@thx/router",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "React router enhancements",
   "main": "dist/index.js",
   "scripts": {
@@ -79,11 +79,11 @@
     "react-redux": "^5.0.0",
     "react-router-dom": "^4.1.0",
     "redux": "^3.7.0",
-    "semantic-ui-react": "^0.71.3"
+    "semantic-ui-react": "^0.72"
   },
   "dependencies": {
-    "@thx/auth": "^1.0.0",
-    "@thx/messages": "^1.0.0",
+    "@thx/auth": "^1.0.2",
+    "@thx/messages": "^1.0.3",
     "debug": "^3.0.0",
     "immutable": "^3.8.1",
     "lodash": "^4.17.4",
