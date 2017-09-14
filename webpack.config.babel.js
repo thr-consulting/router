@@ -2,18 +2,22 @@
 import path from 'path';
 import nodeExternals from 'webpack-node-externals';
 
+const DEPLOY = process.env.DEPLOY === 'true';
+
 const root = path.resolve(__dirname);
 
 module.exports = {
-	entry: './lib/index.js',
-	target: 'node',
+	entry: {
+		index: './lib/index.js',
+		server: './lib/index.server.js',
+	},
+	target: 'web',
 	devtool: 'source-map',
 	externals: [nodeExternals()],
 	output: {
-		path: path.resolve(root, 'dist'),
-		filename: 'index.js',
-		library: 'router',
-		libraryTarget: 'umd',
+		path: DEPLOY ? path.resolve(root) : path.resolve(root, 'dist'),
+		filename: '[name].js',
+		libraryTarget: 'commonjs2',
 	},
 	module: {
 		rules: [
@@ -26,30 +30,30 @@ module.exports = {
 						options: {
 							babelrc: false,
 							presets: [
-								['es2015', {loose: true, modules: false}],
-								'stage-1',
+								['env', {modules: false, targets: {browsers: 'last 2 versions'}}],
 								'react',
 								'flow',
 							],
-							plugins: [
-								'flow-react-proptypes',
-							],
+							plugins: ['transform-class-properties', 'transform-object-rest-spread'],
 						},
 					},
 				],
 			},
 			{
 				test: /\.(png|jpg|jpeg|gif|svg|woff|woff2|eot|ttf)(\?[a-z0-9=.]+)?$/,
-				use: [{loader: 'url-loader', options: {limit: 10000}}],
+				use: [
+					{loader: 'url-loader', options: {limit: 10000}},
+					{loader: 'image-webpack-loader'},
+				],
 			},
 		],
 	},
 	plugins: [
 		// new webpack.optimize.UglifyJsPlugin({
-		// 	compress: {
-		// 		warnings: false,
-		// 	},
 		// 	sourceMap: true,
+		// 	mangle: false,
+		// 	compress: false,
+		// 	comments: true,
 		// }),
 	],
 };
